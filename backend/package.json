@@ -1,0 +1,47 @@
+{
+  "name": "whatsapp-clone-server",
+  "version": "1.0.0",
+  "description": "server side messaging app using socket.io & node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production nodemon src/index.js"
+  },
+  "keywords": [
+    "node.js",
+    "socket.io",
+    "node",
+    "express",
+    "api",
+    "mongodb",
+    "mongoose",
+    "passport"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
+    "express-rate-limit": "^5.0.0",
+    "helmet": "^4.1.0",
+    "http-status": "^1.5.0",
+    "joi": "^17.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.7.7",
+    "mongoose-sequence": "^5.3.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.3.3",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "del": "^6.0.0",
+    "nodemon": "^2.0.0"
+  }
+}
