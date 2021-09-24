@@ -5,7 +5,7 @@ const path = require('path')
 
 
 const home = catchAsync(async (req, res) => {
-  res.sendFile(path.join(__dirname, '..','views','index.html'));
+  res.sendFile(path.resolve(__dirname, '../../../frontend/dist/index.html'));
 });
 
 

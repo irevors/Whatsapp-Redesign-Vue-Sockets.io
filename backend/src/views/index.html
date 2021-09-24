@@ -43,9 +43,9 @@
 
   form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    if (input.value) {
+    if (input.value.trim()) {
       // when submiting form, emit 'char message' event
-      socket.emit('chat message', input.value);
+      socket.emit('server message', input.value);
       input.value = '';
     }
   });

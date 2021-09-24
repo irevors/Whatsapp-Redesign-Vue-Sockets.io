@@ -2,7 +2,8 @@ const app = require('./app');
 const config = require('./config/config');
 const logger = require('./config/logger');
 const server = require('http').createServer(app);
-const io = require('./config/sockets.io.js')(server);
+const io = require('./config/sockets.io.js')(server, { origins: '*:*' });
+
 
 // start express server
 server.listen(config.port, () => {
