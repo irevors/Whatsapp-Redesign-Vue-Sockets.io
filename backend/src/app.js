@@ -18,7 +18,7 @@ const httpStatus = require('http-status')
 const app = express();
 
 // serve favicon
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 if (config.env !== 'test') {
   app.use(morgan.successHandler);
@@ -26,10 +26,11 @@ if (config.env !== 'test') {
 }
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 
 // add public dir to static
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+//app.use(express.static('../frontend/public'));
 
 // setup nonce for headers
 app.use((req, res, next) => {

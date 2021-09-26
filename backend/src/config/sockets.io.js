@@ -3,10 +3,16 @@ const uuid = require('uuid');
 
 // to store socket connections
 const activeSockets = {};
+const corsOptions = {
+  cors: {
+    origin: 'http://localhost:8080',
+    methods: ['GET', 'POST']
+  }
+}
 
-const io = (server) => {
+module.exports = (server) => {
   // socket.io server
-  const io = new Server(server);
+  const io = new Server(server, corsOptions);
 
   // // auth middleware for sockets
   // io.use((socket, next) => {
@@ -21,6 +27,9 @@ const io = (server) => {
   io.on('connection', (socket) => {
     addSocket(socket);
     // console.log('a user connected!', 'SOCKET_ID:',  socket.id , 'SOCKET_ROOMS:',[...socket.rooms]);
+    //
+    // user authentication ???
+    //let token = socket.handshake.auth.token
     console.log(
       ' %s socket(s) is/are connected',
       Object.values(activeSockets).length
@@ -34,9 +43,9 @@ const io = (server) => {
 
     // when user emits event 'chat message'
     // server emit the same msg to all sockets
-    socket.on('chat message', (msg) => {
-      console.log('message: ' + msg);
-      io.emit('chat message', { msg: msg, senderId: socket.id });
+    socket.on('user message', (dataMessage) => {
+      console.log('message: ' + dataMessage);
+      io.emit('user message', dataMessage);
     });
 
     // when user create a conection
@@ -117,9 +126,12 @@ function removeSocket(socket) {
   if (activeSockets[_id].length < 1) delete activeSockets[_id];
   console.log({ activeSockets });
 }
+<<<<<<< HEAD
 
 function generateRoomName() {
   return uuid.v4();
 }
 
 module.exports = io;
+=======
+>>>>>>> 5c1e7e36d285c4e4e6f7ea63c2837fca7d50b64f
