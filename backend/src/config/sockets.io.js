@@ -1,4 +1,5 @@
 const { Server } = require('socket.io');
+const uuid = require('uuid');
 
 // to store socket connections
 const activeSockets = {};
@@ -7,7 +8,7 @@ const io = (server) => {
   // socket.io server
   const io = new Server(server);
 
-  // auth middleware for sockets
+  // // auth middleware for sockets
   // io.use((socket, next) => {
   //   const { token } = socket.handshake.auth;
   //   if (!token) return next(logger.error('Auth: Invalid or missing token'));
@@ -24,6 +25,7 @@ const io = (server) => {
       ' %s socket(s) is/are connected',
       Object.values(activeSockets).length
     );
+    console.log('%c prueba de css', 'color:red');
 
     socket.on('disconnect', () => {
       removeSocket(socket);
@@ -39,11 +41,35 @@ const io = (server) => {
 
     // when user create a conection
     // create a new room
-    socket.on('create', (room) => {
-      socket.join(room);
-      console.log(`room ${room} was created!`, 'SOCKET_ROOMS:', [
-        ...socket.rooms,
-      ]);
+    socket.on('create-room-with-user', (otherSocketId) => {
+      const roomName = generateRoomName();
+      socket.join(roomName);
+      console.log(`socket:${socket.id} added to room: ${roomName}`);
+
+      io.in(otherSocketId).socketsJoin(roomName);
+      console.log(`socket:${otherSocketId} added to room: ${roomName}`);
+    });
+
+    // send msg to user by room id
+    socket.on('msg-room', ({ msg, room }) => {
+      io.in(room).emit('room-msg', { msg, senderId: socket.id, room });
+      console.log(socket.rooms);
+    });
+
+    // send active socket rooms
+    socket.on('get-active-rooms', () => {
+      io.to(socket.id).emit('set-active-rooms', [...socket.rooms]);
+    });
+
+    socket.on('get-active-sockets', async () => {
+      // const sockets = Object.values(activeSockets);
+      const fetchSockets = await io.fetchSockets();
+      const socketIds = [];
+      fetchSockets.forEach((s) => {
+        if (socket.id !== s.id) socketIds.push(s.id);
+      });
+      console.log(socketIds);
+      io.to(socket.id).emit('set-active-sockets', socketIds);
     });
 
     // TODO: implement typing... functionality for
@@ -90,6 +116,10 @@ function removeSocket(socket) {
   activeSockets[_id].splice(index, 1);
   if (activeSockets[_id].length < 1) delete activeSockets[_id];
   console.log({ activeSockets });
+}
+
+function generateRoomName() {
+  return uuid.v4();
 }
 
 module.exports = io;

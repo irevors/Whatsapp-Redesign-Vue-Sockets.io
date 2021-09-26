@@ -31,7 +31,9 @@ const userSchema = mongoose.Schema(
       minlength: 8,
       validate(value) {
         if (!value.match(/\d/) || !value.match(/[a-zA-Z]/)) {
-          throw new Error('Password must contain at least one letter and one number');
+          throw new Error(
+            'Password must contain at least one letter and one number'
+          );
         }
       },
       private: true, // used by the toJSON plugin
@@ -53,14 +55,12 @@ const userSchema = mongoose.Schema(
 userSchema.plugin(toJSON);
 userSchema.plugin(paginate);
 
-
 // Check if email is taken
 
 userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
   const user = await this.findOne({ email, _id: { $ne: excludeUserId } });
   return !!user;
 };
-
 
 // Check if password matches the user's password
 
@@ -78,12 +78,13 @@ userSchema.pre('save', async function (next) {
     user.salt = await crypto.randomBytes(32).toString('hex');
   }
   if (user.isModified('password')) {
-    user.password = await crypto.pbkdf2Sync(user.password, user.salt, 10000, 64, 'sha512').toString('hex');
+    user.password = await crypto
+      .pbkdf2Sync(user.password, user.salt, 10000, 64, 'sha512')
+      .toString('hex');
   }
 
   next();
 });
-
 
 const User = mongoose.model('User', userSchema);
 
