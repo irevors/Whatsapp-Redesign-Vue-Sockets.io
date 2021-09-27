@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <nav class="navbar navbar-expand-lg navbar-dark C-navbar">
-      <div class="container-fluid C-navbar__container">
+      <div class="container C-navbar__container">
         <a class="C-navbar__title" href="#" v-text="title" />
         <div class="C-navbar__actions-wrapper">
           <div class="C-navbar__action-darkmode">
@@ -9,7 +9,6 @@
               @click="toggleTheme"
               class="btn rounded-circle me-4 C-navbar__action-btn"
             >
-              <i class="C-navbar__icon"></i>
               <font-awesome-icon
                 :icon="['fas', 'moon']"
                 class="C-navbar__icon"
@@ -73,8 +72,12 @@ export default {
 
 <style lang="scss">
 .C-navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
   background-color: var(--color__bg);
-  padding: 0 1.4rem !important;
+  // padding: 0 1.4rem !important;
   &__container {
     display: flex;
     justify-content: space-between;

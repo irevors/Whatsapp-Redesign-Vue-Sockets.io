@@ -3,7 +3,7 @@
     <div class="C-avatar__stories-count">
       <svg
         class="C-avatar__svg-border"
-        viewBox="-2 -2.5 100 100"
+        viewBox="-2 -2 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
@@ -30,7 +30,7 @@ export default {
   props: ["data"],
   computed: {
     numberOfStories() {
-      const count = [0, 25, 50, 75];
+      const count = [0, "0,100", 50, 75, 14];
       const random = Math.floor(Math.random() * (count.length - 0));
       return count[random];
     },
@@ -52,6 +52,7 @@ export default {
     position: relative;
     padding: 0.4rem;
     border-radius: 100px;
+    cursor: pointer;
   }
   &__svg-border {
     position: absolute;
@@ -76,6 +77,9 @@ export default {
   }
   &__text {
     color: var(--color__text-primary);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    user-select: none;
   }
 }
 </style>

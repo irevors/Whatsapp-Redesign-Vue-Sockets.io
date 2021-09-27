@@ -1,10 +1,6 @@
 <template>
   <div class="C-status">
-    <swiper
-      :modules="swiperModules"
-      class="swiper"
-      :slides-per-view="numberOfSlides"
-    >
+    <swiper :free-mode="true" :slides-per-view="numberOfSlides">
       <swiper-slide v-for="(data, index) in fakeData" :key="index">
         <StatusItem :data="data" />
       </swiper-slide>
@@ -13,14 +9,11 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, freeMode } from "swiper/vue";
-import "swiper/swiper.min.css";
-
 import StatusItem from "./StatusItem.vue";
 
 export default {
   name: "Status",
-  components: { StatusItem, Swiper, SwiperSlide },
+  components: { StatusItem },
   computed: {
     windowsWidth() {
       const width =
@@ -36,11 +29,10 @@ export default {
   },
   data() {
     return {
-      swiperModules: [freeMode],
       fakeData: [
         {
-          img: "https://i.pravatar.cc/150?img=1",
-          name: "Clara",
+          img: "https://i.pravatar.cc/150?img=7",
+          name: "Tu historia",
         },
         {
           img: "https://i.pravatar.cc/150?img=2",
@@ -77,6 +69,54 @@ export default {
         {
           img: "https://i.pravatar.cc/150?img=4",
           name: "Claudio",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=5",
+          name: "Claudia",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=6",
+          name: "Stu",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=3",
+          name: "Luis",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=4",
+          name: "Claudio",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=5",
+          name: "Claudia",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=6",
+          name: "Stu",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=5",
+          name: "Claudia",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=6",
+          name: "Stu",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=3",
+          name: "Luis",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=4",
+          name: "Claudio",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=5",
+          name: "Claudia",
+        },
+        {
+          img: "https://i.pravatar.cc/150?img=6",
+          name: "Stu",
         },
         {
           img: "https://i.pravatar.cc/150?img=5",
@@ -110,6 +150,9 @@ export default {
 
 <style lang="scss">
 .C-status {
+  position: relative;
+  z-index: 0;
+  margin-top: 4.7rem;
   background: var(--color__bg);
   display: flex;
   overflow: hidden;
