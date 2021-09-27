@@ -6,9 +6,9 @@ const activeSockets = {};
 const corsOptions = {
   cors: {
     origin: 'http://localhost:8080',
-    methods: ['GET', 'POST']
-  }
-}
+    methods: ['GET', 'POST'],
+  },
+};
 
 module.exports = (server) => {
   // socket.io server
@@ -126,12 +126,9 @@ function removeSocket(socket) {
   if (activeSockets[_id].length < 1) delete activeSockets[_id];
   console.log({ activeSockets });
 }
-<<<<<<< HEAD
 
 function generateRoomName() {
   return uuid.v4();
 }
 
-module.exports = io;
-=======
->>>>>>> 5c1e7e36d285c4e4e6f7ea63c2837fca7d50b64f
+// module.exports = io;
