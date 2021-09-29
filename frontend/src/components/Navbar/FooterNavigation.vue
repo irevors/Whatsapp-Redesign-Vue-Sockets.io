@@ -36,12 +36,12 @@ export default {
         {
           text: "Estados",
           newMessages: 100,
-          to: { name: "Chats" },
+          to: { name: "Home" },
         },
         {
           text: "Llamadas",
           newMessages: null,
-          to: { name: "Chats" },
+          to: { name: "Home" },
         },
       ],
     };

@@ -1,6 +1,6 @@
 <template>
   <li class="C-footer-li">
-    <router-link :to="to">
+    <router-link :to="to" class="C-footer-li__link">
       <button class="C-footer-li__btn btn rounded-pill p-1 px-2 p-md-2 px-md-3">
         {{ text }}
         <span
@@ -72,8 +72,8 @@ export default {
 .C-footer-li {
   $block: &;
   &__btn {
-    background-color: #5ebc7b !important;
-    color: #fff;
+    background-color: var(--color__bg);
+    color: var(--color__text-primary);
     position: relative;
     font-weight: 300;
     &:hover {
@@ -81,9 +81,18 @@ export default {
         color: #fff;
       }
     }
+    &:focus {
+      box-shadow: none;
+    }
     font-size: 0.7rem;
     @media (min-width: 768px) {
       font-size: 1rem;
+    }
+  }
+  &__link.router-link-exact-active {
+    #{$block}__btn {
+      color: #fff;
+      background-color: #5ebc7b !important;
     }
   }
   &__badge {
