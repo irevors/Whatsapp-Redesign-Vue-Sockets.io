@@ -36,7 +36,7 @@ export default {
     },
   },
   components: { ConversationItem },
-  created(){
+  created() {
     window.scrollTo(0, document.body.scrollHeight);
   },
   data() {
@@ -160,6 +160,7 @@ export default {
 
 <style lang="scss">
 .L-conversations {
+  background-color: var(--color__main-view);
   &__list {
     list-style-type: none;
     padding: 0;
