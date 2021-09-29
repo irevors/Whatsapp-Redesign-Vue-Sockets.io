@@ -9,11 +9,17 @@
         <font-awesome-icon :icon="['fas', 'archive']" class="C-navbar__icon" />
       </button>
     </header>
+    <section class="L-active-groups">
+      <GroupCard />
+    </section>
   </main>
 </template>
 
 <script>
+import GroupCard from "@/components/Groups/GroupCard.vue";
+
 export default {
+  components: { GroupCard },
   computed: {
     createdGroups() {
       return 6;
