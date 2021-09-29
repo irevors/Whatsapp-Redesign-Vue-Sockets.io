@@ -26,6 +26,9 @@ library.add(faSearch, faMoon, faEllipsisH, faSun, faArchive);
 // import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap';
 
+// custom components
+import Avatar from './components/Common/Avatar.vue';
+
 const app = createApp(App);
 
 app.use(store);
@@ -35,5 +38,7 @@ app.component('font-awesome-icon', FontAwesomeIcon);
 // register globally swiper components
 app.component('swiper', Swiper);
 app.component('swiper-slide', SwiperSlide);
+// register globally custom components
+app.component('Avatar', Avatar);
 
 app.mount('#app');

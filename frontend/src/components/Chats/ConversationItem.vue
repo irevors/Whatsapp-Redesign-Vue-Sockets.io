@@ -1,9 +1,7 @@
 <template>
   <article class="C-conversation-item">
-    <div
-      class="C-avatar__img C-conversation-item__img"
-      :style="{ backgroundImage: `url(${data.img})` }"
-    ></div>
+    <Avatar :src="data.img" class="C-conversation-item__img" />
+
     <div class="C-conversation-item__text">
       <p class="C-conversation-item__timestamp">{{ data.timestamp }}</p>
       <p class="C-conversation-item__sender">{{ data.name }}</p>

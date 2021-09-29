@@ -15,11 +15,7 @@
           :stroke-dasharray="`${numberOfStories}%`"
         />
       </svg>
-
-      <div
-        class="C-avatar__img"
-        :style="{ backgroundImage: `url(${data.img})` }"
-      ></div>
+      <Avatar :src="data.img" />
     </div>
     <p class="C-avatar__text">{{ data.name }}</p>
   </div>
@@ -67,13 +63,6 @@ export default {
       // stroke-dasharray: 50%;
       stroke-dashoffset: 100;
     }
-  }
-  &__img {
-    padding: 2rem;
-    border-radius: 50%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
   }
   &__text {
     color: var(--color__text-primary);
