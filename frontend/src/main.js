@@ -16,11 +16,12 @@ import {
   faEllipsisH,
   faSun,
   faArchive,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // add to fa's library selected icons
-library.add(faSearch, faMoon, faEllipsisH, faSun, faArchive);
+library.add(faSearch, faMoon, faEllipsisH, faSun, faArchive, faPlus);
 
 // bootstrap
 // import 'bootstrap/scss/bootstrap.scss';

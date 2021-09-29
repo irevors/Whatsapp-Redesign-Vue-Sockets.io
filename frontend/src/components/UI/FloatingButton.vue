@@ -1,6 +1,11 @@
 <template>
   <button class="btn rounded-circle C-floating-btn">
-    <slot><span>+</span></slot>
+    <slot
+      ><span
+        ><font-awesome-icon
+          :icon="['fas', 'plus']"
+          class="C-floating-btn__icon" /></span
+    ></slot>
   </button>
 </template>
 
@@ -16,6 +21,9 @@
   right: 20px;
   &:hover {
     color: #36446a;
+  }
+  &__icon {
+    color: #fff;
   }
 }
 </style>
