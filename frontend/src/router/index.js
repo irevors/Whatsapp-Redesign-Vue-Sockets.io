@@ -36,6 +36,14 @@ const routes = [
             /* webpackChunkName: "chats" */ '@/components/Chats/Chats.vue'
           ),
       },
+      {
+        path: 'groups',
+        name: 'Groups',
+        component: () =>
+          import(
+            /* webpackChunkName: "chats" */ '@/components/Groups/Groups.vue'
+          ),
+      },
     ],
   },
 ];
@@ -43,6 +51,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  // eslint-disable-next-line no-unused-vars
 });
 
 export default router;

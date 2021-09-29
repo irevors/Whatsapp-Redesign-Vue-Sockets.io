@@ -23,9 +23,6 @@
       </ul>
     </section>
   </main>
-  <footer>
-    <div class="L-navigation"></div>
-  </footer>
 </template>
 
 <script>
@@ -39,6 +36,9 @@ export default {
     },
   },
   components: { ConversationItem },
+  created(){
+    window.scrollTo(0, document.body.scrollHeight);
+  },
   data() {
     return {
       fakeData: [
@@ -173,7 +173,7 @@ export default {
     //   margin-top: 1rem;
     // }
     &:hover {
-      background-color: #f3f4f9;
+      background-color: var(--color__conversations-hover);
       &::before {
         content: "";
         position: absolute;
@@ -181,7 +181,7 @@ export default {
         left: 0;
         height: 100%;
         width: 5px;
-        background-color: #64bc5e;
+        background-color: var(--color__conversations-hover-before);
       }
     }
   }
@@ -189,12 +189,5 @@ export default {
     display: inline-block;
     width: 2rem;
   }
-}
-.L-navigation {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 15%;
-  background-color: var(--color__bg);
 }
 </style>

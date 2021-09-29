@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss">
 .C-conversation-item {
+  color: var(--color__main-view-primary-text);
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -45,7 +46,7 @@ export default {
     right: 0;
     font-weight: 400;
     font-size: 0.8rem;
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color__main-view-secondary-text);
   }
   &__sender {
     font-size: 1rem;
@@ -55,7 +56,7 @@ export default {
     max-width: 400px;
     font-weight: 400;
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color__main-view-secondary-text);
     display: inline-block;
   }
   //   &--new-message {

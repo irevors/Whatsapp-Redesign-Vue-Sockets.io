@@ -96,11 +96,11 @@ export default {
     display: flex;
   }
   &__action-btn {
-    background-color: #eff4f7 !important;
+    background-color: var(--color__navbar-btn-bg) !important;
     padding: 1px 6px !important;
   }
   &__icon {
-    color: #36446a;
+    color: var(--color__navbar-btn-icons);
   }
 }
 </style>
