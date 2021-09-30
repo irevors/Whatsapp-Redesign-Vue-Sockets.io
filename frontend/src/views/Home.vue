@@ -5,7 +5,13 @@
       <Status />
       <router-view></router-view>
     </scrollable-container>
-    <FloatingButton />
+    <floating-button>
+      <font-awesome-icon
+        v-if="$route.name === 'Groups'"
+        :icon="['fas', 'user-friends']"
+        class="C-floating-btn__icon"
+      />
+    </floating-button>
     <FooterNavigation class="L-navigation" />
   </div>
 </template>
