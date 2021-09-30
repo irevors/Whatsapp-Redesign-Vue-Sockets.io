@@ -14,6 +14,7 @@ import {
   faSearch,
   faMoon,
   faEllipsisH,
+  faEllipsisV,
   faSun,
   faArchive,
   faPlus,
@@ -21,7 +22,15 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // add to fa's library selected icons
-library.add(faSearch, faMoon, faEllipsisH, faSun, faArchive, faPlus);
+library.add(
+  faSearch,
+  faMoon,
+  faEllipsisH,
+  faSun,
+  faArchive,
+  faPlus,
+  faEllipsisV
+);
 
 // bootstrap
 // import 'bootstrap/scss/bootstrap.scss';
