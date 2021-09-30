@@ -26,6 +26,10 @@ $color__conversations-hover: #f3f4f9;
 $color__conversations-hover--dark: #32264a;
 $color__conversations-hover-before: #64bc5e;
 $color__conversations-hover-before--dark: #a364d2;
+$color__group-card-border: #f4f4ff;
+$color__group-card-border--dark: #42235a;
+$color__group-card-separator: #e5e5eb;
+$color__group-card-separator--dark: #522c6f;
 
 .theme {
   --color__bg: #{$color__bg};
@@ -40,6 +44,8 @@ $color__conversations-hover-before--dark: #a364d2;
   --color__main-view-secondary-text: #{$color__main-view-secondary-text};
   --color__navbar-btn-bg: #{$color__navbar-btn-bg};
   --color__navbar-btn-icons: #{$color__navbar-btn-icons};
+  --color__group-card-border: #{$color__group-card-border};
+  --color__group-card-separator: #{$color__group-card-separator};
   &--dark {
     --color__bg: #{$color__bg--dark};
     --color__text-title: #{$color__text-title--dark};
@@ -53,6 +59,8 @@ $color__conversations-hover-before--dark: #a364d2;
     --color__main-view-secondary-text: #{$color__main-view-secondary-text--dark};
     --color__navbar-btn-bg: #{$color__navbar-btn-bg--dark};
     --color__navbar-btn-icons: #{$color__navbar-btn-icons--dark};
+    --color__group-card-border: #{$color__group-card-border--dark};
+    --color__group-card-separator: #{$color__group-card-separator--dark};
   }
 }
 
@@ -124,7 +132,6 @@ $footer-nav-height--md: 15%;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   padding-bottom: calc(var(--footer-nav-height) - 6rem);
-  height: 100%;
   &__header {
     padding-top: 1rem;
     padding-bottom: 1rem;
