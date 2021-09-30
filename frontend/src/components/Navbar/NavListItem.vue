@@ -14,9 +14,9 @@
             bg-danger
             rounded-circle
           "
-          :style="newMessagesWidth"
         >
-          {{ newMessagesFormatted }}
+          <span class="C-footer-li__text"> {{ newMessagesFormatted }}</span>
+
           <span class="visually-hidden">unread messages</span>
         </span>
       </button>
@@ -45,25 +45,6 @@ export default {
       }
       return value;
     },
-    newMessagesWidth() {
-      const value = this.newMessagesFormatted;
-      switch (value.length) {
-        case 1:
-          return {
-            padding: `0.1rem 0.35rem`,
-          };
-        case 2:
-          return {
-            padding: `0.1rem 0.25rem`,
-          };
-        case 3:
-          return {
-            padding: `0.15rem 0.1rem`,
-            fontSize: "0.5rem",
-          };
-      }
-      return "";
-    },
   },
 };
 </script>
@@ -89,6 +70,14 @@ export default {
       font-size: 1rem;
     }
   }
+  &__text {
+    padding: 0;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   &__link.router-link-exact-active {
     #{$block}__btn {
       color: #fff;
@@ -98,8 +87,7 @@ export default {
   &__badge {
     background-color: #5ebc7b !important;
     border: 2px solid var(--color__bg);
-    font-size: 0.6rem;
-    padding: 0.15rem 0.1rem;
+    padding: 0.6rem;
     color: #fff;
     &:hover {
       color: #fff;
