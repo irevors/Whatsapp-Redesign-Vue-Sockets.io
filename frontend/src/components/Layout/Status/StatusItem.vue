@@ -3,7 +3,7 @@
     <div class="C-avatar__stories-count">
       <svg
         class="C-avatar__svg-border"
-        viewBox="-2 -2 100 100"
+        viewBox="-2 -1.8 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
@@ -26,7 +26,7 @@ export default {
   props: ["data"],
   computed: {
     numberOfStories() {
-      const count = [0, "0,100", 50, 75, 14];
+      const count = [0, "0,100", 75, 15, "0,100", 0];
       const random = Math.floor(Math.random() * (count.length - 0));
       return count[random];
     },
