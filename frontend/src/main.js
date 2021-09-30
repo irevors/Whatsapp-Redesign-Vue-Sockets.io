@@ -18,6 +18,7 @@ import {
   faSun,
   faArchive,
   faPlus,
+  faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -29,7 +30,8 @@ library.add(
   faSun,
   faArchive,
   faPlus,
-  faEllipsisV
+  faEllipsisV,
+  faUserFriends
 );
 
 // bootstrap
