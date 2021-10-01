@@ -1,11 +1,10 @@
 <template>
   <button class="btn rounded-circle C-floating-btn">
-    <slot
-      ><span
-        ><font-awesome-icon
-          :icon="['fas', 'plus']"
-          class="C-floating-btn__icon" /></span
-    ></slot>
+    <slot>
+      <span>
+        <font-awesome-icon :icon="['fas', 'plus']" class="C-floating-btn__icon"
+      /></span>
+    </slot>
   </button>
 </template>
 
