@@ -30,7 +30,11 @@
             </button>
           </div>
           <div class="C-navbar__action-expand">
-            <button class="btn rounded-circle C-navbar__action-btn">
+            <button
+              class="btn rounded-circle C-navbar__action-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#main-options-modal"
+            >
               <font-awesome-icon
                 :icon="['fas', 'ellipsis-h']"
                 class="C-navbar__icon"
