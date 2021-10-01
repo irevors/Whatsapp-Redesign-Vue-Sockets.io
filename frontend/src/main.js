@@ -19,6 +19,8 @@ import {
   faArchive,
   faPlus,
   faUserFriends,
+  faCommentDots,
+  faHistory,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -31,15 +33,18 @@ library.add(
   faArchive,
   faPlus,
   faEllipsisV,
-  faUserFriends
+  faUserFriends,
+  faCommentDots,
+  faHistory
 );
 
 // bootstrap
 // import 'bootstrap/scss/bootstrap.scss';
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 // custom components
-import Avatar from './components/Common/Avatar.vue';
+import Avatar from '@/components/Common/Avatar.vue';
+import BaseModal from '@/components/Common/BaseModal.vue';
 
 const app = createApp(App);
 
@@ -52,5 +57,6 @@ app.component('swiper', Swiper);
 app.component('swiper-slide', SwiperSlide);
 // register globally custom components
 app.component('Avatar', Avatar);
+app.component('base-modal', BaseModal);
 
 app.mount('#app');
