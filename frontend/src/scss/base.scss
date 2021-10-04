@@ -16,6 +16,8 @@ $color__status-border: #1977f3;
 $color__status-border--dark: #8000ff;
 $color__scrollbar-thumb: #36446a;
 $color__scrollbar-thumb--dark: #e1e1e1;
+$color__scrollbar-track: #eee;
+$color__scrollbar-track--dark: #364672;
 $color__main-view: #fff;
 $color__main-view--dark: #202247;
 $color__main-view-primary-text: #000;
@@ -37,6 +39,7 @@ $color__group-card-separator--dark: #522c6f;
   --color__text-primary: #{$color__text-primary};
   --color__status-border: #{$color__status-border};
   --color__scrollbar-thumb: #{$color__scrollbar-thumb};
+  --color__scrollbar-track: #{$color__scrollbar-track};
   --color__main-view: #{$color__main-view};
   --color__conversations-hover: #{$color__conversations-hover};
   --color__conversations-hover-before: #{$color__conversations-hover-before};
@@ -52,6 +55,7 @@ $color__group-card-separator--dark: #522c6f;
     --color__text-primary: #{$color__text-primary--dark};
     --color__status-border: #{$color__status-border--dark};
     --color__scrollbar-thumb: #{$color__scrollbar-thumb--dark};
+    --color__scrollbar-track: #{$color__scrollbar-track--dark};
     --color__main-view: #{$color__main-view--dark};
     --color__conversations-hover: #{$color__conversations-hover--dark};
     --color__conversations-hover-before: #{$color__conversations-hover-before--dark};
@@ -89,39 +93,6 @@ $base-modal-height: 400px;
   :root {
     --base-modal-min-width: #{$base-modal-min-width--lg};
   }
-}
-
-/* SCROLL BAR */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color__scrollbar-thumb);
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color__scrollbar-thumb);
-}
-::-webkit-scrollbar-thumb:active {
-  background: #000000;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-track:hover,
-::-webkit-scrollbar-track:active {
-  background: transparent;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
 }
 
 // common clases namespaced with 'chatApp'
