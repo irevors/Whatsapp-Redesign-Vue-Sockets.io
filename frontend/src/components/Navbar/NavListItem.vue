@@ -58,6 +58,7 @@ export default {
     position: relative;
     font-weight: 300;
     &:hover {
+      color: var(--color__nav-bottom-btn-hovered);
       #{$block}__badge {
         color: #fff;
       }
@@ -78,10 +79,12 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  &__link.router-link-exact-active {
-    #{$block}__btn {
-      color: #fff;
-      background-color: #5ebc7b !important;
+  &__link {
+    &.router-link-exact-active {
+      #{$block}__btn {
+        color: #fff;
+        background-color: #5ebc7b !important;
+      }
     }
   }
   &__badge {
