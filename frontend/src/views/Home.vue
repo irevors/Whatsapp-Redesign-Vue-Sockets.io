@@ -20,7 +20,6 @@
 <script>
 import Navbar from "@/components/Navbar/Navbar.vue";
 import Status from "@/components/Layout/Status/Status.vue";
-import ScrollableContainer from "@/components/Layout/Containers/ScrollableContainer.vue";
 import FloatingButton from "@/components/UI/FloatingButton.vue";
 import FooterNavigation from "@/components/Navbar/FooterNavigation.vue";
 import MainModal from "../components/UI/MainOptionsModal.vue";
@@ -30,7 +29,6 @@ export default {
   components: {
     Navbar,
     Status,
-    ScrollableContainer,
     FloatingButton,
     FooterNavigation,
     MainModal,
