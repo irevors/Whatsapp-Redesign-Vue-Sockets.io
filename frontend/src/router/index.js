@@ -41,10 +41,18 @@ const routes = [
         name: 'Groups',
         component: () =>
           import(
-            /* webpackChunkName: "chats" */ '@/components/Groups/Groups.vue'
+            /* webpackChunkName: "groups" */ '@/components/Groups/Groups.vue'
           ),
       },
     ],
+  },
+  {
+    path: '/conversation/:conversationId',
+    name: 'Conversation',
+    component: () =>
+      import(
+        /* webpackChunkName: "conversation" */ '@/components/Conversations/Conversation.vue'
+      ),
   },
 ];
 
