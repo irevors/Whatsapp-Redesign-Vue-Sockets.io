@@ -21,6 +21,12 @@ import {
   faUserFriends,
   faCommentDots,
   faHistory,
+  faStickyNote,
+  faPlay,
+  faCamera,
+  faChevronLeft,
+  faVideo,
+  faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -35,7 +41,13 @@ library.add(
   faEllipsisV,
   faUserFriends,
   faCommentDots,
-  faHistory
+  faHistory,
+  faStickyNote,
+  faPlay,
+  faCamera,
+  faChevronLeft,
+  faVideo,
+  faPhoneAlt
 );
 
 // bootstrap
@@ -49,6 +61,7 @@ import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 // custom components
 import Avatar from '@/components/Common/Avatar.vue';
 import BaseModal from '@/components/Common/BaseModal.vue';
+import ScrollableContainer from '@/components/Layout/Containers/ScrollableContainer.vue';
 
 const app = createApp(App);
 
@@ -65,5 +78,6 @@ app.component('swiper-slide', SwiperSlide);
 // register globally custom components
 app.component('Avatar', Avatar);
 app.component('base-modal', BaseModal);
+app.component('scrollable-container', ScrollableContainer);
 
 app.mount('#app');
