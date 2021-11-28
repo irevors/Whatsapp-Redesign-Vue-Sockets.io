@@ -15,10 +15,16 @@
       <ul class="L-conversations__list">
         <li
           class="L-conversations__list-item"
-          v-for="(data, index) in fakeData"
+          v-for="(chat, index) in chats"
           :key="index"
         >
-          <ConversationItem :data="data" />
+          <ConversationItem
+            :data="chat"
+            :to="{
+              name: 'Conversation',
+              params: { conversationId: chat.conversationId },
+            }"
+          />
         </li>
       </ul>
     </section>
@@ -34,126 +40,13 @@ export default {
     newChatsCount() {
       return 2;
     },
+    chats() {
+      return this.$store.getters["conversations/getChats"];
+    },
   },
   components: { ConversationItem },
   created() {
     window.scrollTo(0, document.body.scrollHeight);
-  },
-  data() {
-    return {
-      fakeData: [
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=7",
-          name: "Carlos",
-          lastMsg: "¡Hola Mao! ¿Nos vemos después del trabajo?",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=2",
-          name: "Joffred",
-          lastMsg:
-            "Debo contarles sobre mi canal de  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus neque nulla. Eius, exercitationem! ",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=3",
-          name: "Luis",
-          lastMsg:
-            "Sí puedo hacerte esto en la semana m dolor, sit amet consectetur adipisicing elit. Voluptates delectus neque",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=4",
-          name: "Claudio",
-          lastMsg:
-            "Por cierto, ¿No viste a mi perro m dolor, sit amet consectetur adipisicing elit. Voluptates delectus neque m dolor, sit amet consectetur adipisicing elit. Voluptates delectus neque",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=5",
-          name: "Claudia",
-          lastMsg:
-            "Estoy muy emocionada m dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequem dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequem dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequ",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=6",
-          name: "Stu",
-          lastMsg: "El fin de Semana podemos salir",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=1",
-          name: "Clara",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=2",
-          name: "Joffred",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=3",
-          name: "Luis",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=4",
-          name: "Claudio",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=5",
-          name: "Claudia",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=6",
-          name: "Stu",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=3",
-          name: "Luis",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=4",
-          name: "Claudio",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=5",
-          name: "Claudia",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-        {
-          timestamp: "11:00 am",
-          img: "https://i.pravatar.cc/150?img=6",
-          name: "Stu",
-          lastMsg:
-            "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius mollitia vel quam amet architecto quod porro natus autem accusamus, blanditiis illum inventore non!",
-        },
-      ],
-    };
   },
 };
 </script>
@@ -170,9 +63,6 @@ export default {
     position: relative;
     display: flex;
     padding: 1rem 2rem;
-    // &:first-child {
-    //   margin-top: 1rem;
-    // }
     &:hover {
       background-color: var(--color__conversations-hover);
       &::before {
