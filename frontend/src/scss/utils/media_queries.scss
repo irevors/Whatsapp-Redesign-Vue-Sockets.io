@@ -1,0 +1,14 @@
+@include media-breakpoint-up(md) {
+  :root {
+    --footer-nav-height: #{$footer-nav-height--md};
+    --base-modal-min-width: #{$base-modal-min-width--md};
+    --conversation-input-width: #{$conversation-input-width--md};
+    --conversation-text: #{$conversation-text--md};
+    --conversation-text-date: #{$conversation-text-date--md};
+  }
+}
+@include media-breakpoint-up(lg) {
+  :root {
+    --base-modal-min-width: #{$base-modal-min-width--lg};
+  }
+}

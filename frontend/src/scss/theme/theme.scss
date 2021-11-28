@@ -1,0 +1,48 @@
+.theme {
+  --color__bg: #{$color__bg};
+  --color__text-title: #{$color__text-title};
+  --color__text-primary: #{$color__text-primary};
+  --color__status-border: #{$color__status-border};
+  --color__scrollbar-thumb: #{$color__scrollbar-thumb};
+  --color__scrollbar-track: #{$color__scrollbar-track};
+  --color__main-view: #{$color__main-view};
+  --color__conversations-hover: #{$color__conversations-hover};
+  --color__conversations-hover-before: #{$color__conversations-hover-before};
+  --color__main-view-primary-text: #{$color__main-view-primary-text};
+  --color__main-view-secondary-text: #{$color__main-view-secondary-text};
+  --color__navbar-btn-bg: #{$color__navbar-btn-bg};
+  --color__navbar-btn-icons: #{$color__navbar-btn-icons};
+  --color__group-card-border: #{$color__group-card-border};
+  --color__group-card-separator: #{$color__group-card-separator};
+  --color__nav-bottom-btn-hovered: #{$color__nav-bottom-btn-hovered};
+  --color__conversation-header-btn-bg: #{$color__conversation-header-btn-bg};
+  &--dark {
+    --color__bg: #{$color__bg--dark};
+    --color__text-title: #{$color__text-title--dark};
+    --color__text-primary: #{$color__text-primary--dark};
+    --color__status-border: #{$color__status-border--dark};
+    --color__scrollbar-thumb: #{$color__scrollbar-thumb--dark};
+    --color__scrollbar-track: #{$color__scrollbar-track--dark};
+    --color__main-view: #{$color__main-view--dark};
+    --color__conversations-hover: #{$color__conversations-hover--dark};
+    --color__conversations-hover-before: #{$color__conversations-hover-before--dark};
+    --color__main-view-primary-text: #{$color__main-view-primary-text--dark};
+    --color__main-view-secondary-text: #{$color__main-view-secondary-text--dark};
+    --color__navbar-btn-bg: #{$color__navbar-btn-bg--dark};
+    --color__navbar-btn-icons: #{$color__navbar-btn-icons--dark};
+    --color__group-card-border: #{$color__group-card-border--dark};
+    --color__group-card-separator: #{$color__group-card-separator--dark};
+    --color__nav-bottom-btn-hovered: #{$color__nav-bottom-btn-hovered--dark};
+    --color__conversation-header-btn-bg: #{$color__conversation-header-btn-bg--dark};
+  }
+}
+
+:root {
+  --footer-nav-height: #{$footer-nav-height};
+  --base-modal-min-width: #{$base-modal-min-width};
+  --base-modal-max-width: #{$base-modal-max-width};
+  --base-modal-height: #{$base-modal-height};
+  --conversation-input-width: #{$conversation-input-width};
+  --conversation-text: #{$conversation-text};
+  --conversation-text-date: #{$conversation-text-date};
+}

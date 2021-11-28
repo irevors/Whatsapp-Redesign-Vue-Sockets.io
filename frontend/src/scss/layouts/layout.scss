@@ -1,0 +1,33 @@
+.L-chat-view {
+  background-color: var(--color__main-view);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding-bottom: calc(var(--footer-nav-height) - 6rem);
+  &__header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    @include media-breakpoint-up(sm) {
+      padding-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @include media-breakpoint-up(md) {
+      padding-top: 2rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    &-btn {
+      align-self: flex-start;
+      svg {
+        color: var(--color__main-view-primary-text);
+      }
+    }
+  }
+}
+.L-view-header {
+  margin-top: 1rem;
+}
