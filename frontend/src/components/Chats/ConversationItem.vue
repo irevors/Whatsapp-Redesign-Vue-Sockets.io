@@ -38,7 +38,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-self: flex-end;
-    align-items: flex-start;
+    align-items: start;
     justify-content: center;
     width: 90%;
     height: 4rem;
