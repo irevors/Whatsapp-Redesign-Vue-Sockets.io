@@ -1,19 +1,26 @@
 <template>
-  <article class="C-conversation-item">
-    <Avatar :src="data.img" class="C-conversation-item__img" />
+  <router-link
+    :to="to"
+    style="width: 100%; display: block; text-decoration: none"
+  >
+    <article class="C-conversation-item">
+      <Avatar :src="data.img" class="C-conversation-item__img" />
 
-    <div class="C-conversation-item__text">
-      <p class="C-conversation-item__timestamp">{{ data.timestamp }}</p>
-      <p class="C-conversation-item__sender">{{ data.name }}</p>
-      <p class="C-conversation-item__msg text-truncate">{{ data.lastMsg }}</p>
-    </div>
-  </article>
+      <div class="C-conversation-item__text">
+        <p class="C-conversation-item__timestamp">{{ data.timestamp }}</p>
+        <p class="C-conversation-item__sender">{{ data.name }}</p>
+        <p class="C-conversation-item__msg text-truncate">
+          {{ data.lastMsg }}
+        </p>
+      </div>
+    </article>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: "conversationItem",
-  props: ["data"],
+  props: ["data", "to"],
 };
 </script>
 
@@ -27,11 +34,15 @@ export default {
     display: inline-block;
   }
   &__text {
-    display: inline-block;
     position: relative;
+    display: flex;
+    flex-direction: column;
     justify-self: flex-end;
+    align-items: start;
+    justify-content: center;
     width: 90%;
-    height: 100%;
+    height: 4rem;
+    margin-left: 0.5rem;
   }
   &__timestamp,
   &__sender,
@@ -42,6 +53,7 @@ export default {
   &__timestamp {
     position: absolute;
     right: 0;
+    top: 0;
     font-weight: 400;
     font-size: 0.8rem;
     color: var(--color__main-view-secondary-text);
@@ -51,13 +63,11 @@ export default {
     font-weight: 500;
   }
   &__msg {
-    max-width: 400px;
+    max-width: 70%;
     font-weight: 400;
     font-size: 0.9rem;
     color: var(--color__main-view-secondary-text);
     display: inline-block;
   }
-  //   &--new-message {
-  //   }
 }
 </style>
