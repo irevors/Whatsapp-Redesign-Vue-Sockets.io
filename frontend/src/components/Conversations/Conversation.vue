@@ -13,7 +13,7 @@
         </div>
         <scrollable-container class="L-conversation-view__scrollable-container">
           <MessageItem
-            v-for="(c, i) in conversation.messages"
+            v-for="(c, i) in conversation?.messages"
             :key="i"
             :messageOut="c.senderId === userId"
           >
