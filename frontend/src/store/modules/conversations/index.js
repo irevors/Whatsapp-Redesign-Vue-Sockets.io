@@ -47,13 +47,6 @@ export default {
             'Estoy muy emocionada m dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequem dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequem dolor, sit amet consectetur adipisicing elit. Voluptates delectus nequ',
         },
         {
-          conversationId: '6',
-          timestamp: '11:00 am',
-          img: 'https://i.pravatar.cc/150?img=6',
-          name: 'Stu',
-          lastMsg: 'El fin de Semana podemos salir',
-        },
-        {
           conversationId: '7',
           timestamp: '11:00 am',
           img: 'https://i.pravatar.cc/150?img=1',
