@@ -7,6 +7,7 @@
     --conversation-text-date: #{$conversation-text-date--md};
   }
 }
+
 @include media-breakpoint-up(lg) {
   :root {
     --base-modal-min-width: #{$base-modal-min-width--lg};

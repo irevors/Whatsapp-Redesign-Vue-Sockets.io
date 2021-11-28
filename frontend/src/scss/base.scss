@@ -4,10 +4,11 @@
 // CUSTOM STYLES
 // utils
 @import './utils/variables.scss';
-@import './utils/media_queries.scss';
 // theme
 @import './theme/theme.scss';
 // layout
 @import './layouts/layout.scss';
 // base
 @import './base/common.scss';
+// media queries
+@import './utils/media_queries.scss';
