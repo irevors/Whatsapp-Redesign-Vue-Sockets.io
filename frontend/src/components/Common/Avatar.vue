@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     computedPadding() {
-      return this.padding ? this.padding : 2;
+      return this.padding || this.padding === 0 ? this.padding : 2;
     },
     computedFontSize() {
       return this.fontSize ? this.fontSize : 1;
