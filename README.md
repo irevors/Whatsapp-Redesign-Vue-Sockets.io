@@ -7,6 +7,13 @@
 
 > Status: WIP, details at the bottom
 
+<div align="center">
+  <img src="images/wsp_chats.png" width="250" />
+  <img src="images/wsp_chats--dark.png" width="250" />
+  <img src="images/wsp_conversation.png" width="250" />
+</div>
+
+
 ## Build
 
 ```sh
