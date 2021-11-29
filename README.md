@@ -48,7 +48,7 @@ yarn serve
 <li> ✅ Basic API functionality </li>
 <li> ✅ Configure nonce for CSP implementation </li> 
 <li> ✅ Secutity setup </li> 
-<li> ❌ JWT auto implementation </li> 
+<li> ❌ JWT auth implementation </li> 
 <li> ❌ Sockets.io final events </li> 
 <li> ❌ E2E encryption </li> 
 <li> ❌ Dockerize </li> 
