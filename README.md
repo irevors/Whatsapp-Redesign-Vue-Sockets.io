@@ -39,7 +39,7 @@ yarn serve
 <li> ❌ Link Vuex state with Sockets.io API </li> 
 <li> ❌ Groups Conversation view </li> 
 <li> ❌ Estados view </li> 
-<li> ❌ LLamadas view </li> 
+<li> ❌ Llamadas view </li> 
 <li> ❌ Local data persitence (Inedexed DB) </li> 
 </ul>
 
