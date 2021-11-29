@@ -13,8 +13,8 @@
   <img src="images/wsp_conversation.png" width="250" />
 </div>
 
-
-## Build
+# Frontend
+## Build 
 
 ```sh
 yarn build
@@ -25,6 +25,14 @@ yarn build
 ```sh
 yarn serve
 ```
+
+# Backend
+## Run dev server
+
+```sh
+yarn start
+```
+
 
 ## WIP
 
