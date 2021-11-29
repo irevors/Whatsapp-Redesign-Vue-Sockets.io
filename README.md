@@ -68,7 +68,7 @@ yarn start
 ### Development
 👤 **Ignacio Riveros**
 * Github: [@irevors](https://github.com/irevors)
-* 
+
 ### Design
 👤 **Mao Lop**
 https://dribbble.com/shots/15990476-Whatsapp-Redesign-Concept
